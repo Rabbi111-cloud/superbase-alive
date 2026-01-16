@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js'
+const { createClient } = require('@supabase/supabase-js')
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -7,7 +7,7 @@ const supabase = createClient(
 
 async function ping() {
   const { error } = await supabase
-    .from('users') // 👈 CHANGE THIS
+    .from('profiles') // 👈 CHANGE TO YOUR TABLE
     .select('id')
     .limit(1)
 
